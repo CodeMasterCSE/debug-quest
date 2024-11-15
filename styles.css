@@ -3306,7 +3306,6 @@ Styles for the despair text
 
 
 
-
 /* Body settings */
 body {
     background-color: #111; /* Dark background for visibility */
@@ -3428,4 +3427,17 @@ body {
     padding: 20px;
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
+}
+
+.success-message {
+    display: none; /* Initially hidden */
+    color: green; /* Text color */
+    font-weight: bold; /* Bold text */
+    background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
+    border: 2px solid green; /* Green border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Add padding */
+    margin-top: 10px; /* Space above the message */
+    text-align: center; /* Center the text */
+    box-shadow: 0 0 10px rgba(0, 128, 0, 0.5); /* Subtle shadow for depth */
 }

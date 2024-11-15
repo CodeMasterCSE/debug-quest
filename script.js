@@ -588,10 +588,6 @@ function playMagicSound() {
 
 function embarkOnAdventure() {
     const safariCard = document.getElementById('safari-card');
-    safariCard.classList.add('glitch-effect');
-
-    const safariSound = new Audio('safari-sound.mp3'); 
-    safariSound.play();
 
     const messages = [
         "Beware of the wild animals lurking in the code!",
@@ -602,9 +598,13 @@ function embarkOnAdventure() {
     const randomMessage = messages[Math.floor(Math.random() * messages.length)];
     alert(randomMessage);
 
+    // Show success message instead of BSOD
+    const successMessage = document.querySelector('.success-message');
+    successMessage.style.display = 'block';
+
     setTimeout(() => {
-        safariCard.classList.remove('glitch-effect');
-    }, 3000); 
+        successMessage.style.display = 'none';
+    }, 5000);
 
     const safariEffect = document.querySelector('.safari-effect');
     safariEffect.classList.add('active');
@@ -612,17 +612,6 @@ function embarkOnAdventure() {
     setTimeout(() => {
         safariEffect.classList.remove('active');
     }, 3000); 
-
-    setTimeout(() => {
-        const bsodMessage = document.querySelector('.bsod-message');
-        bsodMessage.style.display = 'flex'; 
-        bsodMessage.innerHTML = `<h2>:( SYSTEM FAILURE</h2><p>Your adventure has encountered an error!</p>`; // Custom BSOD message
-
-        setTimeout(() => {
-            bsodMessage.style.display = 'none'; 
-        }, 50000); 
-    }, 3000); 
-    createBugs();
 }
 
 
